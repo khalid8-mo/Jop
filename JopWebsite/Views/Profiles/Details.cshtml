@@ -1,0 +1,51 @@
+﻿@model JopWebsite.Models.Profile
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layoutkh.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Profile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProDiscraption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProDiscraption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

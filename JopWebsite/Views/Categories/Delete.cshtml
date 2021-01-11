@@ -1,0 +1,47 @@
+﻿@model JopWebsite.Models.Category
+
+@{
+    ViewBag.Title = "حذف النوع";
+}
+<style>
+    dd{
+        margin-bottom:20px
+    }
+</style>
+<h2>حذ النوع</h2>
+
+<h3>هل انت متاكد بانك تريد حذف هذا العنصر ؟</h3>
+<div>
+    <h4>حذف النوع</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="control-label">
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+
+        <dd >
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryDescription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-danger"style="width:10%" />  |
+            <span class = "btn btn-default"style="width:10%">
+                @Html.ActionLink("عوده", "Index", new { @class = "btn btn-default" })
+
+            </span>
+        </div>
+    }
+</div>

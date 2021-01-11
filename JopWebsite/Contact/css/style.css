@@ -1,0 +1,60 @@
+body{
+    font-size:18px
+}
+.navbar-inverse{
+    background-color: #510fa8;
+    border-color:#881b8f ;
+}
+.navbar-inverse .navbar-nav > li > a{
+    color: #fff;
+    font-size: 19px;
+}
+.navbar{
+    margin-bottom: 10px;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
+    background-color: #7110f2;
+
+}
+.open > .dropdown-menu{
+    background-color: #7110f2;
+    color: #fff;
+}
+.dropdown-menu > li > a{
+    color: #fff;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+    background-color: #510fa8;
+    color: #fff;
+}
+.dropdown-menu > li > a{
+    font-size: 17px;
+}
+.logo-size {
+    width: 100px;
+    height: 57px;
+    margin-top: -13px;
+}
+.Content-Margin {
+    margin-top: 68px;
+    margin-bottom:68px
+}
+
+/*Start Footer*/
+.myFooter, .modal-header {
+    background-color: #7110f2;
+    color: #fff;
+}
+.form-control{
+    margin-bottom: 10px;
+}
+ .glyphicon-search{
+     cursor: pointer;
+ }
+ .close{
+     color: #fff;
+     opacity: .7;
+ }
+ .modal-footer{
+     text-align: center;
+ }

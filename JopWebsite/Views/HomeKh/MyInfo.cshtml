@@ -1,0 +1,82 @@
+﻿@model IEnumerable<JopWebsite.Models.MyInfo>
+
+@{
+    ViewBag.Title = "MyInfo";
+    Layout = "~/Views/Shared/_Layoutkh.cshtml";
+}
+
+
+   
+    <section id="about" class="about-mf sect-pt4 route">
+
+      
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="box-shadow-full">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="about-me pt-4 pt-md-0">
+                                        <div class="title-box-2">
+                                            <h5 class="title-left" style="text-align: right;">
+                                                من انا
+                                            </h5>
+                                        </div>
+                                        <p class="lead" style="text-align:right">
+                                            (full Stack Devaloper)
+                                            مصمم ومطور صفحات الويب بتقنة Asp.Net
+                                            واجيد التعامل مع الفوتوشوب
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-3">
+                                            <div class="about-img">
+                                                <img src="~/Khstyle/img/Logo.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-9">
+                                            <div class="about-info">
+                                                <p><span class="title-s">الاسم: </span> <span>  @ViewBag.Name </span></p>
+                                                <p><span class="title-s">الشخصيه: </span> <span> @Session["Mastar"]</span></p>
+                                                <p><span class="title-s">البريد الالكتروني: </span> <span> aljokar014@gmail.com</span></p>
+                                                <p><span class="title-s">رقم الهاتف: </span> <span> 0129224063</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-mf">
+                                        <p class="title-s" style="float: inherit;">مجموعات المهارات الخاصة بي</p>
+                                        <span>HTML / css / Bootstrap</span> <span class="pull-right">95%</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="85" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                        <span>JavaScript / jquery</span> <span class="pull-right">75%</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                        <span>C# / Asp.Net</span> <span class="pull-right">40%</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="50" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                        <span>Xamarin</span> <span class="pull-right">3%</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 3%" aria-valuenow="90" aria-valuemin="0"
+                                                 aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
+
+

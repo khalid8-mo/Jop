@@ -1,0 +1,47 @@
+﻿@model IEnumerable<JopWebsite.Models.Category>
+@{ 
+    ViewBag.Title = "الصفحة الرئسيه";
+}
+<style>
+    html body{
+        background:#fff
+    }
+</style>
+<div class="jumbotron">
+    <h3>مرحبا بك عزيزي الزائر</h3>
+    <p class="lead">
+        مرحبا بك في فضاء البحث عن الوظايف باختلاف اصنافها يمكنك نشر وظيفه اذا كنته ناشرأ ويمكنك البحث عن وظيفه اذا كنته باحثأ
+    </p>
+    <p><a href="#" class="btn btn-primary ">المزيد من التفاصيل</a></p>
+</div>
+@foreach (var item in Model)
+{
+<div class="panel" >
+    <h1 class="panel-heading">@Html.DisplayFor(ModelItem => item.CategoryName)</h1>
+    <h5>@Html.DisplayFor(ModelItem => item.CategoryDescription)</h5>
+    <div class="row">
+        @foreach (var subItem in item.Jobs)
+        {
+
+
+        <div class="col-md-4">
+            <div class="card" style="margin-left:20px;margin-bottom:30px;height:380px">
+                <img src="~/Uploads/@subItem.JopImage" style="width:100%;height: 197px;" />
+                <div class="card-block">
+                    <div class="card-moved">
+                        <h3>@Html.DisplayFor(ModelItem => subItem.JopTitle)</h3>
+                        <h5>@Html.DisplayFor(ModelItem => subItem.JopContent)</h5>
+
+                        <p><a href="#" class="btn btn-brown">التفاصيل</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        }
+    </div>
+</div>
+}

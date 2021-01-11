@@ -1,0 +1,42 @@
+﻿html body {
+    background-color: #000;
+    color: #fff;
+}
+.header-navbar.navbar-semi-dark {
+    background: #0e0e0e;
+}
+.header-navbar .navbar-container ul.nav li a.dropdown-user-link,
+.header-navbar .navbar-container ul.nav li a.menu-toggle i, .card, .card-block, form label {
+    color: #fff
+}
+.header-navbar.navbar-semi-dark .navbar-header, .main-menu.menu-dark, .main-menu.menu-dark .navigation,
+.card {
+    background: #131313;
+}
+    .main-menu.menu-dark .navigation > li.hover > a, .main-menu.menu-dark .navigation > li:hover > a, .main-menu.menu-dark .navigation > li.active > a{
+        background-color:#000
+    }
+
+    .main-menu.menu-dark .main-menu-header {
+        border-bottom: 1px solid #282828
+    }
+.ri {
+    background: #162029;
+}
+    .ri tr th {
+        background-color: #333535;
+        border-color: #131313
+    }
+.open > .dropdown-menu {
+    background: #222;
+    border-color: #333;
+    width: 202px;
+    text-align: center;
+}
+.dropdown-item{
+    color:#fff
+}
+    .dropdown-item:hover {
+        background-color: #0e0e0e;
+        color:#fff
+    }

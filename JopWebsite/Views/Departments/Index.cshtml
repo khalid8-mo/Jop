@@ -1,0 +1,45 @@
+﻿@model IEnumerable<JopWebsite.Models.Department>
+
+@{
+    ViewBag.Title = "اسعراض الاقسام";
+}
+
+<div class="col-md-12">
+    <br /><br />
+</div>
+<div class="col-md-1"></div>
+<div class="col-md-10">
+    <h3>@ViewBag.Title</h3>
+    <br />
+    <table class="table">
+        <thead class="ri">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DepartmentName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DepartmentMangment)
+                </th>
+                <th>تعديل</th>
+            </tr>
+        </thead>
+        <tbody class="ri">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DepartmentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DepartmentMangment)
+                    </td>
+                    <td>
+                        @Html.ActionLink("تعديل", "Edit", new { id = item.DepartmentId })
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="col-md-1"></div>

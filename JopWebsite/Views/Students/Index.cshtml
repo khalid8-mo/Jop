@@ -1,0 +1,74 @@
+﻿@model IEnumerable<JopWebsite.Models.Student>
+
+@{
+    ViewBag.Title = "استعراض الطلاب";
+}
+
+<div class="row" style="width:100%">
+    <div class="col-md-12">
+        <br /><br />
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-12">
+        <h3>@ViewBag.Title</h3>
+        <br />
+        <table class="table">
+            <thead class="ri">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Department.DepartmentName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StdudentName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StudentNamber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StudentPhone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StudentEmail)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StudentAddress)
+                    </th>
+                    <th>
+                        تعديل
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="ri">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StdudentName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentNamber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentPhone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentEmail)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentAddress)
+                        </td>
+                        <td>
+                            @Html.ActionLink("تعديل", "Edit", new { id = item.StudentId })
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-md-1"></div>
+

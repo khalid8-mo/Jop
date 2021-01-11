@@ -1,0 +1,46 @@
+﻿@model IEnumerable<JopWebsite.Models.Projact>
+
+@{
+    ViewBag.Title = "Projact";
+    Layout = "~/Views/Shared/_Layoutkh.cshtml";
+}
+
+<section id="service" class="services-mf route">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="title-box text-center">
+                    <h3 class="title-a">
+                        المشاريع الأخيرة
+                    </h3>
+                    <p class="subtitle-a">
+                        بعض من مشاريعي الأخيرة.
+                    </p>
+                    <div class="line-mf"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="service-box text-center">
+                        <div class="service-ico text-center">
+                            <img src="~/Uploads/@item.ProjactImage" style="width:100%;height:147px">
+                        </div>
+                        <div class="service-content">
+                            <h2 class="s-title">@Html.DisplayFor(modleItem => item.ProjactTitle)</h2>
+                            <p class="s-description text-center">
+                                @Html.DisplayFor(modleItem => item.ProjactDiscraption)
+                               
+                            </p>
+                            <br><br><br>
+                            <a href="@Html.DisplayFor(modleItem => item.ProjactUrl)" class="button button-a">مشاهده</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+

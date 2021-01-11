@@ -1,0 +1,76 @@
+﻿
+<title>@ViewBag.Title</title>
+<section id="minimal-statistics-bg">
+    <div class="row">
+        <div class="col-xl-3 col-lg-6 col-xs-12">
+            <div class="card bg-cyan">
+                <div class="card-body">
+                    <div class="card-block">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <i class="icon-pencil white font-large-2 float-xs-left"></i>
+                            </div>
+                            <div class="media-body white text-xs-right">
+                                <h3>@Session["Categories"]</h3>
+                                <span>العروض </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-xs-12">
+            <div class="card bg-deep-orange">
+                <div class="card-body">
+                    <div class="card-block">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <i class="icon-users2 white font-large-2 float-xs-left"></i>
+                            </div>
+                            <div class="media-body white text-xs-right">
+                                <h3>@Session["StudentNumber"]</h3>
+                                <span>عدد الطلاب </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-xs-12">
+            <div class="card bg-teal">
+                <div class="card-body">
+                    <div class="card-block">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <i class="icon-code-working white font-large-2 float-xs-left"></i>
+                            </div>
+                            <div class="media-body white text-xs-right">
+                                <h3>@Session["Jop"] </h3>
+                                <span>الوظايف </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-xs-12">
+            <div class="card bg-pink">
+                <div class="card-body">
+                    <div class="card-block">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <i class="icon-users3 white font-large-2 float-xs-left"></i>
+                            </div>
+                            <div class="media-body white text-xs-right">
+                                <h3>@Session["UserNum"]</h3>
+                                <span>المستخدمين </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>

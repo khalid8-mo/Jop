@@ -1,0 +1,135 @@
+﻿@model JopWebsite.Models.Jop
+
+@{
+    ViewBag.Title = "انشاء وظيفه";
+}
+
+
+@using (Html.BeginForm("Create", "Jops", FormMethod.Post, new { nctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-block">
+                    <div class="form-horizontal">
+
+                        <h4>@ViewBag.Title</h4>
+                        <hr />
+                        <div class="alert-danger" id="error-div" style="display:none;margin-bottom: 20px;padding: 10px;">
+                            <span id="view-err"></span>
+
+                        </div>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.JopImage)
+                      
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.JopTitle, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.JopTitle, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.JopTitle, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.JopContent, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.JopContent, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.JopContent, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.JopImage, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                            <div class="col-md-9">
+                                <input type="file" name="Upload" class="form-control" id="myimage" />
+                                @Html.ValidationMessageFor(model => model.JopImage, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CategoryId, "نوع الوظيفه", htmlAttributes: new { @class = "control-label col-md-3" })
+
+                            <div class="col-md-9">
+                                @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class=" col-md-10 text-lg-center">
+                                <input type="submit" value="حفظ" class="btn btn-primary" style="width:32%" id="Save" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+}
+@section scripts{
+    <script>
+        $(function () {
+            $("#Save").click(function () {
+
+                if ($("#myimage").val() == "") {
+
+                    $("#error-div").fadeIn();
+                    $("#view-err").append("الرجاء اختيار صوره")
+                    return false
+                }
+
+            });
+        });
+    </script>
+    <script>
+        $("#btn-get-data").click(function () {
+            var opj = {};
+            opj.x = $("#number").val();
+            $.ajax({
+                type: "Post",
+                url: "/Jops/GetDetails",
+                data: JSON.stringify(opj),
+                contentType: "application/json",
+                dataType: "json",
+                success: function (response) {
+                    var data = response[0];
+
+                    if (data == null) {
+                        Swal.fire(
+                            'رقم السجل غير موجود',
+                            'الرجاء مراجعة رقم السجل ',
+                            'info'
+                        )
+                    } else {
+
+                        $("#number1").val(data.CommercialRegisterID);
+                    
+                    }
+
+
+
+                }, error(event, xhr, options) {
+                    alert("الرجاء ادخال رقم السجل التجاري");
+                }
+            });
+
+
+        })
+    </script>
+}
+    
+

@@ -1,0 +1,62 @@
+﻿@model JopWebsite.Models.Jop
+
+@{
+    ViewBag.Title = "تفاصيل الوظائف";
+}
+<style>
+    .dl-horizontal dt {
+        float: right
+    }
+
+    dd {
+        margin-bottom: 20px
+    }
+</style>
+
+
+<div>
+    <h4>@ViewBag.Title</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JopTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JopTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JopContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JopContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JopImage)
+        </dt>
+
+        <dd>
+          <img src="~/Uploads/@Html.DisplayFor(Model=>Model.JopImage)"class="thumbnail"style="width:48px;height:48px" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Edit","Jops",new { id= Model.Id})" class="btn btn-success" style="width:10%"><span class="glyphicon glyphicon-plus"></span> تعديل</a> |
+
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+    <a href="@Url.Action("Index","Jops")" class="btn btn-default" style="width:10%"><span class="glyphicon glyphicon-backward"></span> عوده</a> 
+
+    @*@Html.ActionLink("Back to List", "Index")*@
+</p>

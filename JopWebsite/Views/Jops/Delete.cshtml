@@ -1,0 +1,64 @@
+﻿@model JopWebsite.Models.Jop
+
+@{
+    ViewBag.Title = "حذف";
+}
+    <style>
+        .dl-horizontal dt{
+            float:right
+        }
+        dd {
+            margin-bottom: 20px
+        }
+    </style>
+<h2>Delete</h2>
+
+<h3>هل انت متاكد بانك تريد حذف هذه الوظيفه ؟</h3>
+<div>
+    <h4>@ViewBag.Title</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JopTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JopTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JopContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JopContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JopImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JopImage)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-danger"style="width:10%" /> |
+            <a href="@Url.Action("Index","Jops")"class="btn btn-default"style="width:10%">عوده</a>
+            @*@Html.ActionLink("Back to List", "Index")*@
+        </div>
+    }
+</div>
