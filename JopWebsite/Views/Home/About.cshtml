@@ -1,7 +1,30 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿@model IEnumerable<JopWebsite.Models.About>
 
-<p>Use this area to provide additional information.</p>
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layoutkh.cshtml";
+}
+
+<h2>About</h2>
+
+@foreach (var subItem in Model)
+{
+
+
+    <div class="col-md-4">
+        <div class="card" style="margin-left:20px;margin-bottom:30px;height:380px">
+            <img src="~/Uploads/@subItem.Image" style="width:100%;height: 197px;" />
+            <div class="card-block">
+                <div class="card-moved">
+                    <h3>@Html.DisplayFor(ModelItem => subItem.Name)</h3>
+                    <h5>@Html.DisplayFor(ModelItem => subItem.Discraption)</h5>
+ 
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+}

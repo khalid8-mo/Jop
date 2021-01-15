@@ -23,9 +23,14 @@ namespace WebApplication1.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            
 
             return View();
+        }
+        [HttpPost]
+        public ActionResult About(About about)
+        {
+            return View(about.ToList());
         }
 
         public ActionResult Contact()
@@ -41,7 +46,7 @@ namespace WebApplication1.Controllers
             var male = new MailMessage();
             var loginInfo = new NetworkCredential("aljokar014@gmail.com","JR@13@jr!"); //Information your Email 
             male.From = new MailAddress(contact.Email); // From Mail To LoginInfo
-            male.To.Add(new MailAddress("aljokar014@gmail.com"));
+            male.To.Add(new MailAddress("aljokar014@gmail.com")); // Resiver The Message
             // Information The Message
             male.Subject = "الموضوع : " + contact.Subject; 
             var body = "اسم المرسل :"+contact.Name +"<br>"
@@ -50,7 +55,7 @@ namespace WebApplication1.Controllers
             "نص الرساله  : " + contact.Massege;
 
             male.Body = body;
-            var SmtpClientPort = new SmtpClient("asmp.gmail.com", 587); // Host And Port
+            var SmtpClientPort = new SmtpClient("asmp.gmail.com", 587); // Host And Port For Gamil
             SmtpClientPort.EnableSsl = true; // الرسايل التلقائيه
             SmtpClientPort.Credentials = loginInfo; 
             SmtpClientPort.Send(male); //Send The Message
