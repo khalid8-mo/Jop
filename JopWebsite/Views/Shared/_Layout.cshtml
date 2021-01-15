@@ -83,7 +83,10 @@
     <div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
         <!-- main menu header-->
         <div class="main-menu-header" style="height:82px">
-            <input type="search" class="form-control"name="Search" />
+            @using (Html.BeginForm("Searsh", "Home", FormMethod.Post))
+            {
+                <input type = "search" class="form-control" name="Search" />
+            }
         </div>
         <!-- / main menu header-->
         <!-- main menu content-->
@@ -214,15 +217,15 @@
     <script>
         $(".checkColor").change(function () {
 
-            if ($(this).prop("checked") == true) {
+                if ($(this).prop("checked") == true) {
                 $("link[href*='Defulte']").attr("href", $(this).attr("data-value1"));
-            } else {
+                } else {
 
                 $("link[href*='Them']").attr("href", $(this).attr("data-value2"));
-            }
+                }
 
 
-        });
+            });
     </script>
 
     @*<script>

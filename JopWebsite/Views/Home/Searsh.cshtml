@@ -1,0 +1,35 @@
+﻿@model IEnumerable<JopWebsite.Models.Jop>
+
+@{
+    ViewBag.Title = "Searsh";
+    Layout = "~/Views/Shared/_Layoutkh.cshtml";
+}
+
+
+    <div class="panel">
+        <h1 class="panel-heading">نتائج البحث</h1>
+        <div class="row">
+            @foreach (var subItem in Model)
+            {
+
+
+                <div class="col-md-4">
+                    <div class="card" style="margin-left:20px;margin-bottom:30px;height:380px">
+                        <img src="~/Uploads/@subItem.JopImage" style="width:100%;height: 197px;" />
+                        <div class="card-block">
+                            <div class="card-moved">
+                                <h3>@Html.DisplayFor(ModelItem => subItem.JopTitle)</h3>
+                                <h5>@Html.DisplayFor(ModelItem => subItem.JopContent)</h5>
+                                @Html.ActionLink("Details", "Jops", new { JopId = subItem.Id }, new { @class = "btn btn-brown"})
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            }
+        </div>
+    </div>
+
