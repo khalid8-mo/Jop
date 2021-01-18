@@ -20,7 +20,8 @@
                             <div class="card-moved">
                                 <h3>@Html.DisplayFor(ModelItem => subItem.JopTitle)</h3>
                                 <h5>@Html.DisplayFor(ModelItem => subItem.JopContent)</h5>
-                                @Html.ActionLink("Details", "Jops", new { JopId = subItem.Id }, new { @class = "btn btn-brown"})
+
+                                <a href="@Url.Action("Details","Jops",new { id = subItem.Id })" class="btn btn-success"><span class="glyphicon glyphicon-inbox"></span>  التفاصل </a>
                             </div>
                         </div>
                     </div>
