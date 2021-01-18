@@ -2,29 +2,24 @@
 
 @{
     ViewBag.Title = "About";
-    Layout = "~/Views/Shared/_Layoutkh.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>About</h2>
 
-@foreach (var subItem in Model)
-{
-
-
+    <div class="col-md-4"></div>
     <div class="col-md-4">
         <div class="card" style="margin-left:20px;margin-bottom:30px;height:380px">
-            <img src="~/Uploads/@subItem.Image" style="width:100%;height: 197px;" />
+            <img src="~/Khstyle/img/Logo.jpg" style="width:100%;height: 197px;" />
             <div class="card-block">
                 <div class="card-moved">
-                    <h3>@Html.DisplayFor(ModelItem => subItem.Name)</h3>
-                    <h5>@Html.DisplayFor(ModelItem => subItem.Discraption)</h5>
- 
+                    <h3>Khalid mohammed</h3>
+                    <h5>Iam Full Stack Devaloper</h5>
+
                 </div>
             </div>
         </div>
 
     </div>
+    <div class="col-md-4"></div>
 
 
-
-}

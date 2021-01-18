@@ -11,6 +11,7 @@ using WebApplication1.Models;
 
 namespace JopWebsite.Controllers
 {
+    [Authorize]
     public class DepartmentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

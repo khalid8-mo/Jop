@@ -25,6 +25,7 @@ namespace JopWebsite.Controllers
         }
 
         // GET: Jops/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -52,16 +53,16 @@ namespace JopWebsite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( Jop jop , HttpPostedFileBase Upload)
+        public ActionResult Create( Jop jop , HttpPostedFileBase UploadFile)
         {
 
            
             if (ModelState.IsValid)
             {
                 //Upload File 
-                string path = Path.Combine(Server.MapPath("~/Uploads"), Upload.FileName);
-                Upload.SaveAs(path);
-                jop.JopImage = Upload.FileName; //Save The Database
+                string path = Path.Combine(Server.MapPath("~/Uploads"), UploadFile.FileName);
+                UploadFile.SaveAs(path);
+                jop.JopImage = UploadFile.FileName; //Save The Database
 
                 db.Jops.Add(jop);
                 db.SaveChanges();

@@ -5,34 +5,34 @@
 }
 
 
-    <div class="row" style="width:100%">
-        <div class="col-lg-12">
-            <br />
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-lg-10">
-            <h2>قائمة انواع الوظائف</h2>
-            <a href="@Url.Action("Create","Categories")" class="btn btn-primary">انشاء نوع جديد</a>
-            <br /><br />
-            <table class="table" id="myTable">
-                <thead class="ri">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.CategoryName)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.CategoryDescription)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.CategoryDate)
-                        </th>
-                        <th>أحداث</th>
-                    </tr>
-                </thead>
-                <tbody class="ri">
+<div class="row" style="width:100%">
+    <div class="col-lg-12">
+        <br />
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-lg-10">
+        <h2>قائمة انواع الوظائف</h2>
+        <a href="@Url.Action("Create","Categories")" class="btn btn-primary">انشاء نوع جديد</a>
+        <br /><br />
+        <table class="display table table-striped" id="myTable">
+            <thead class="ri">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CategoryName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CategoryDescription)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CategoryDate)
+                    </th>
+                    <th>أحداث</th>
+                </tr>
+            </thead>
+            <tbody class="ri">
 
-                    @foreach (var item in Model)
-                    {
+                @foreach (var item in Model)
+                {
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.CategoryName)
@@ -44,34 +44,28 @@
                             @Html.DisplayFor(modelItem => item.CategoryDate)
                         </td>
                         <td>
-                            <a href="@Url.Action("Edit","Categories",new { id=item.Id})" class="btn btn-success">تعديل</a> |
-                            @*@Html.ActionLink("تعديل", "Edit", new { id=item.Id , @class="btn btn-success "}) |*@
-
-                            <a href="@Url.Action("Details","Categories",new { id=item.Id})" class="btn btn-default">تفاصيل</a> |
-
-                            @*@Html.ActionLink("تفاصيل", "Details", new { id = item.Id }) |*@
-                            <a href="@Url.Action("Delete","Categories",new { id = item.Id})" class="btn btn-danger">حذف</a>
-
-                            @*@Html.ActionLink("حذف", "Delete", new { id = item.Id })*@
+                            <a href="@Url.Action("Details","Categories",new { id=item.Id})" class="btn btn-outline-success">تفاصيل</a> 
                         </td>
                     </tr>
-                    }
-                </tbody>
-            </table>
-
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-<script>
-    
-    $(document).ready(function () {
-        $('#myTable').DataTable(
-            {
-                "oLanguage": {
-                    "sUrl": "/DataTableSetting/dataTable.txt"
                 }
-            });
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-md-1"></div>
+</div>
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('#myTable').DataTable(
+                {
+                    "oLanguage": {
+                        "sUrl": "/DataTableSetting/dataTable.txt"
+                    }
+                });
 
 
-    });
-</script>
+        });
+    </script>
+    }

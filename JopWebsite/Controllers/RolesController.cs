@@ -8,6 +8,7 @@ using WebApplication1.Models;
 
 namespace JopWebsite.Controllers
 {
+    [Authorize]
     public class RolesController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
@@ -38,15 +39,15 @@ namespace JopWebsite.Controllers
         [HttpPost]
         public ActionResult Create(IdentityRole role)
         {
-            
-                // TODO: Add insert logic here
-                if (ModelState.IsValid)
+            ViewBag.Role = role.Name;
+            // TODO: Add insert logic here
+            if (ModelState.IsValid)
                 {
                     db.Roles.Add(role);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
-
+         
                 return View(role);
       
           

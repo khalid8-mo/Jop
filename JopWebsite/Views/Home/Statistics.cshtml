@@ -1,76 +1,67 @@
-﻿
+﻿@{ 
+    ViewBag.Title = "الاحصائيات";
+}
 <title>@ViewBag.Title</title>
-<section id="minimal-statistics-bg">
-    <div class="row">
-        <div class="col-xl-3 col-lg-6 col-xs-12">
-            <div class="card bg-cyan">
-                <div class="card-body">
-                    <div class="card-block">
-                        <div class="media">
-                            <div class="media-left media-middle">
-                                <i class="icon-pencil white font-large-2 float-xs-left"></i>
-                            </div>
-                            <div class="media-body white text-xs-right">
-                                <h3>@Session["Categories"]</h3>
-                                <span>العروض </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- Small boxes (Stat box) -->
+<div class="row">
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-aqua">
+            <div class="inner">
+                <h3>@Session["Categories"]</h3>
+                <p>العروض</p>
             </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-xs-12">
-            <div class="card bg-deep-orange">
-                <div class="card-body">
-                    <div class="card-block">
-                        <div class="media">
-                            <div class="media-left media-middle">
-                                <i class="icon-users2 white font-large-2 float-xs-left"></i>
-                            </div>
-                            <div class="media-body white text-xs-right">
-                                <h3>@Session["StudentNumber"]</h3>
-                                <span>عدد الطلاب </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="icon">
+                <i class="fa fa-shopping-cart"></i>
             </div>
+            <a href="~/Categories/Index" class="small-box-footer">
+                مزيد من المعلزمات <i class="fa fa-arrow-circle-right"></i>
+            </a>
         </div>
-        <div class="col-xl-3 col-lg-6 col-xs-12">
-            <div class="card bg-teal">
-                <div class="card-body">
-                    <div class="card-block">
-                        <div class="media">
-                            <div class="media-left media-middle">
-                                <i class="icon-code-working white font-large-2 float-xs-left"></i>
-                            </div>
-                            <div class="media-body white text-xs-right">
-                                <h3>@Session["Jop"] </h3>
-                                <span>الوظايف </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    </div><!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+            <div class="inner">
+                <h3>@Session["StudentNumber"]</h3>
+                <p>الطلاب</p>
             </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-xs-12">
-            <div class="card bg-pink">
-                <div class="card-body">
-                    <div class="card-block">
-                        <div class="media">
-                            <div class="media-left media-middle">
-                                <i class="icon-users3 white font-large-2 float-xs-left"></i>
-                            </div>
-                            <div class="media-body white text-xs-right">
-                                <h3>@Session["UserNum"]</h3>
-                                <span>المستخدمين </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="icon">
+                <i class="ion ion-stats-bars"></i>
             </div>
+            <a href="~/Students/Index" class="small-box-footer">
+           مزيد من المعلومات <i class="fa fa-arrow-circle-right"></i>
+            </a>
         </div>
-    </div>
-
-
-</section>
+    </div><!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+            <div class="inner">
+                <h3>@Session["Jop"] </h3>
+                <p>الوظائف</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-person-add"></i>
+            </div>
+            <a href="~/Jops/Index" class="small-box-footer">
+               مزيد من المعلومات <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div><!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red">
+            <div class="inner">
+                <h3>@Session["UserNum"]</h3>
+                <p>المستخدمين</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+               مزيد من المعلومات <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div><!-- ./col -->
+</div><!-- /.row -->

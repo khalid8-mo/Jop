@@ -7,28 +7,51 @@
     {
         @Html.AntiForgeryToken();
 
-        <ul class="nav navbar-nav float-xs-right">
-            <li class="dropdown dropdown-user nav-item">
-                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link"><span class="avatar avatar-online"><img src="~/Khstyle/img/Logo.jpg" alt="avatar"><i></i></span><span class="user-name">  @Session["UserName"]</span></a>
-
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a href="#" class="dropdown-item"><i class="icon-user"></i> المعلومات الشخصيه</a>
-                    <span class="dropdown-item" id="color"><i class="icon-ellipsis"></i>    الوضع المظلم <input type="checkbox" class="checkColor" data-value1="../assets/css/Them.css"  data-value2="../assets/css/Defulte.css" />   </span>
-                    <a href="Javascript:document.getElementById('Logoff').submit()" class="dropdown-item"><i class="icon-power3"></i> تسجيل الخروج</a>
-                </div>
+        <ul class="nav navbar-nav">
+            <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="~/Khstyle/img/Logo.jpg" class="user-image" alt="User Image">
+                    <span class="hidden-xs">@Session["UserName"]</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <!-- User image -->
+                    <li class="user-header">
+                        <img src="~/Khstyle/img/Logo.jpg" class="img-circle" alt="User Image">
+                        <p>
+                            @Session["UserName"] - @ViewBag.Role
+                            <small>Member since Nov. 2012</small>
+                        </p>
+                    </li>
+                    <!-- Menu Body -->
+                 
+                    <!-- Menu Footer-->
+                    <li class="user-footer">
+                        <div class="pull-right">
+                            <a href="#" class="btn btn-success btn-flat">الحساب</a>
+                        </div>
+                        <div class="pull-left">
+                            <a href="Javascript:document.getElementById('Logoff').submit()"  class="btn btn-danger btn-flat">تسجيل الخروج</a>
+                        </div>
+                    </li>
+                </ul>
             </li>
-
+            <!-- Control Sidebar Toggle Button -->
+            <li>
+                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            </li>
         </ul>
+
 
 
     }
 }
 else
 {
-    <ul class="nav navbar-nav float-xs-right">
-        <li class="nav-item btn btn-success"style="margin-top: 14px;margin-left: 20px;"><a href="~/Account/Register " style="color:#fff"> <span class="icon-user"></span> اشتراك </a></li>
-        <li class="nav-item btn btn-primary"style="margin-top:14px"><a href="~/Account/Login"style="color:#fff"> <span class="icon-prev"></span>   تسجيل الدخول </a></li>
+<ul class="nav navbar-nav">
+    <li><a href="~/Account/Login"><i class="fa fa-user"></i>   تسجيل الدخول   </a></li>
+    <li><a href="~/Account/Register"><i class="fa fa-lock"></i> اشتتراك</a></li>
 
-    </ul>
-}
+
+</ul>
+        }
 

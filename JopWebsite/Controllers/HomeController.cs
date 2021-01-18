@@ -1,6 +1,7 @@
 ﻿using JopWebsite.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -21,17 +22,13 @@ namespace WebApplication1.Controllers
             return View(db.Categories.ToList());
         }
 
-        public ActionResult About()
+        public ActionResult About(About about)
         {
-            
+
 
             return View();
         }
-        [HttpPost]
-        public ActionResult About(About about)
-        {
-            return View(about.ToList());
-        }
+       
 
         public ActionResult Contact()
         {
@@ -42,6 +39,7 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult Contact(Contact contact)
         {
+         
             //Send Message
             var male = new MailMessage();
             var loginInfo = new NetworkCredential("aljokar014@gmail.com","JR@13@jr!"); //Information your Email 
@@ -55,13 +53,36 @@ namespace WebApplication1.Controllers
             "نص الرساله  : " + contact.Massege;
 
             male.Body = body;
-            var SmtpClientPort = new SmtpClient("asmp.gmail.com", 587); // Host And Port For Gamil
-            SmtpClientPort.EnableSsl = true; // الرسايل التلقائيه
-            SmtpClientPort.Credentials = loginInfo; 
-            SmtpClientPort.Send(male); //Send The Message
+            var SmtpClient = new SmtpClient("smtp.gmail.com", 587)// Host And Port For Gamil
+            {
+                EnableSsl = true, // الرسايل التلقائيه الوضع الامن
+                Credentials = loginInfo
+            }; 
+            SmtpClient.Send(male); 
 
-            return View();
+            /*
+     using (MailMessage mm = new MailMessage())
+     {
+         mm.Subject = contact.Subject;
+         mm.Body = contact.Massege;
+
+         mm.IsBodyHtml = false;
+         using (SmtpClient smtp = new SmtpClient())
+         {
+             smtp.Host = "smtp.gmail.com";
+             smtp.EnableSsl = true;
+             NetworkCredential NetworkCred = new NetworkCredential();
+             smtp.UseDefaultCredentials = true;
+             smtp.Credentials = NetworkCred;
+             smtp.Port = 587;
+             smtp.Send(mm);
+             ViewBag.Message = "Email sent.";
+         }
+     }
+      */
+            return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult Statistics()
         {
             Session["UserNum"] = db.Users.ToList().Count;
@@ -83,7 +104,11 @@ namespace WebApplication1.Controllers
             a.Category.CategoryDescription.Contains(Search)
             
             );
-            return View();
+            return View(reuslt);
+        }
+        public ActionResult SearchJops()
+        {
+            return View(db.Categories.ToList());
         }
     }
 }

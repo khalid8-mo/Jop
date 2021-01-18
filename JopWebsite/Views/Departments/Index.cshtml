@@ -11,7 +11,7 @@
 <div class="col-md-10">
     <h3>@ViewBag.Title</h3>
     <br />
-    <table class="table">
+    <table class="display table table-striped" id="table">
         <thead class="ri">
             <tr>
                 <th>
@@ -34,7 +34,7 @@
                         @Html.DisplayFor(modelItem => item.DepartmentMangment)
                     </td>
                     <td>
-                        @Html.ActionLink("تعديل", "Edit", new { id = item.DepartmentId })
+                        <a href="@Url.Action("Edit","Departments",new { id=item.DepartmentId})" class="btn btn-outline-success">تعديل</a>
 
                     </td>
                 </tr>
@@ -43,3 +43,17 @@
     </table>
 </div>
 <div class="col-md-1"></div>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#table").DataTable(
+                {
+                    "oLanguage": {
+                        "sUrl": "/DataTableSetting/dataTable.txt"
+                    }
+                });
+
+
+        });
+    </script>
+}

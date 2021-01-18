@@ -2,62 +2,76 @@
 
 @{
     ViewBag.Title = "Contact";
-    Layout = "~/Views/Shared/_Layoutkh.cshtml";
-}
+    Layout = "~/Views/Shared/_LayoutKh.cshtml";
+}<style>
+    
+    .card{
+            background: #fdfdfd;
+    padding: 20px;
+    }
 
-<h2>Contact</h2>
+    </style>
+
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-<div class="card">
-    <div class="card-block">
-    <div class="form-horizontal">
-        <h4>تواصل</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <div class="col-md-6">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Massege, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Massege, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Massege, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="ارسال" class="btn btn-primary" />
-            </div>
-        </div>
+        <img src="~/AdminLayout/dist/img/Vector.png" style="width:100%" />
     </div>
-</div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-block">
+                <div class="form-horizontal">
+                    <h2>تواصل</h2>
+
+                    <hr />
+                    <p class="lead"style="font-weight:400">
+                        هل لديك مشروع تريد مني أن أعمل عليه؟ أو لديك أي شيء آخر لتقوله؟ لا تتردد في ترك رسالة لنا.
+                    </p>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-3 col-md-push-9" })
+                        <div class="col-md-9 col-md-pull-3 ">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-3 col-md-push-9" })
+                        <div class="col-md-9 col-md-pull-3">
+                            @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Massege, htmlAttributes: new { @class = "control-label col-md-3 col-md-push-9" })
+                        <div class="col-md-9 col-md-pull-3">
+                            @Html.EditorFor(model => model.Massege, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Massege, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-3 col-md-push-9" })
+                        <div class="col-md-9 col-md-pull-3">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class=" col-md-10 col-md-pull-2">
+                            <input type="submit" value="ارسال" class="btn btn-primary"style="width:40%;background-color:#37cece;border-color:#37cece" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+

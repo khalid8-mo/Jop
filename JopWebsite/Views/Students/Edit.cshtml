@@ -8,8 +8,8 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-2"></div>
+    <div class="col-md-7">
         <div class="card">
             <div class="card-block">
                 <div class="form-horizontal">
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.DepartmentId, "DepartmentId", htmlAttributes: new { @class = "control-label col-md-3" })
+                        @Html.LabelFor(model => model.DepartmentId, "القسم", htmlAttributes: new { @class = "control-label col-md-3" })
                         <div class="col-md-9">
                             @Html.DropDownList("DepartmentId", null, htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" })
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div style="float:left">
-                        <a href="@Url.Action("Index")" class="btn btn-brown">عوده</a>
+                        <a href="@Url.Action("Index")" class="btn btn-outline-brown">عوده</a>
                     </div>
                 </div>
 
@@ -81,4 +81,3 @@
     </div>
     <div class="col-md-3"></div>
 }
-

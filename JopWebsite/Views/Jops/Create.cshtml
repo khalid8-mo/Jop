@@ -11,7 +11,7 @@
 
     <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-block">
                     <div class="form-horizontal">
@@ -49,7 +49,7 @@
                             @Html.LabelFor(model => model.JopImage, htmlAttributes: new { @class = "control-label col-md-3" })
 
                             <div class="col-md-9">
-                                <input type="file" name="Upload" class="form-control" id="myimage" />
+                                <input type="file" name="UploadFile" class="form-control-file" id="myimage"style="margin-bottom:10px" />
                                 @Html.ValidationMessageFor(model => model.JopImage, "", new { @class = "text-danger" })
                             </div>
 

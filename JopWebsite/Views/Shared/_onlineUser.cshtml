@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNet.Identity
+
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm())
+    {
+        <div class="user-panel">
+            <div class="pull-right image">
+                <img src="~/Khstyle/img/Logo.jpg" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-right info">
+                <p>@Session["UserName"]</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+            </div>
+            }
+            }

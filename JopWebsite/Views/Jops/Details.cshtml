@@ -2,61 +2,24 @@
 
 @{
     ViewBag.Title = "تفاصيل الوظائف";
+        Layout = "~/Views/Shared/_Layoutkh.cshtml";
+
 }
-<style>
-    .dl-horizontal dt {
-        float: right
-    }
+<div class="col-md-4">
+    <div class="card" style="margin-left:20px;margin-bottom:30px;height:380px">
+        <img src="~/Uploads/@Html.DisplayFor(model => model.JopImage)" style="width:100%;height: 197px;" />
+        <div class="card-block">
+            <div class="card-moved">
+                <h3>اسم الوظيفه : @Html.DisplayFor(model => model.JopTitle)</h3>
+                <h5> وصف الوظيفه : @Html.DisplayFor(model => model.JopContent)</h5>
+            </div>
+            <button class="btn btn-primary">التقدم الي الوظيفه</button>
+            <a href="@Url.Action("Index","Home")" class="btn btn-outline-brown"><span class="glyphicon glyphicon-backward"></span> عوده</a>
 
-    dd {
-        margin-bottom: 20px
-    }
-</style>
-
-
-<div>
-    <h4>@ViewBag.Title</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.JopTitle)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.JopTitle)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.JopContent)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.JopContent)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.JopImage)
-        </dt>
-
-        <dd>
-          <img src="~/Uploads/@Html.DisplayFor(Model=>Model.JopImage)"class="thumbnail"style="width:48px;height:48px" />
-        </dd>
-
-    </dl>
+        </div>
+    </div>
 </div>
-<p>
-    <a href="@Url.Action("Edit","Jops",new { id= Model.Id})" class="btn btn-success" style="width:10%"><span class="glyphicon glyphicon-plus"></span> تعديل</a> |
+<div class="col-md-8"></div>
 
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
-    <a href="@Url.Action("Index","Jops")" class="btn btn-default" style="width:10%"><span class="glyphicon glyphicon-backward"></span> عوده</a> 
 
-    @*@Html.ActionLink("Back to List", "Index")*@
-</p>
+  
